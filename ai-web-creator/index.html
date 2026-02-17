@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web Creator - Intelligent Web & AI Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <h1>🤖 AI Web Creator</h1>
+            <p class="subtitle">Advanced AI System</p>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginError" class="error"></div>
+        </div>
+    </div>
+
+    <div id="mainScreen" class="screen">
+        <header>
+            <div class="header-content">
+                <h1>🤖 AI Web Creator</h1>
+                <div class="user-info">
+                    <span id="userDisplay"></span>
+                    <button id="adminBtn" class="admin-btn" style="display:none;">⚙️ Admin Panel</button>
+                    <button id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="ai-personality-display">
+                <h3>🎭 AI Personality</h3>
+                <div id="personalityDisplay"></div>
+            </div>
+
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-container">
+                    <textarea id="userInput" placeholder="Minta AI untuk membuat website, AI lain, atau tugas lainnya..."></textarea>
+                    <button id="sendBtn">Send</button>
+                </div>
+            </div>
+
+            <div class="generated-content">
+                <h3>📦 Generated Content</h3>
+                <div id="generatedList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminScreen" class="screen">
+        <header>
+            <div class="header-content">
+                <h1>⚙️ Admin Panel</h1>
+                <button id="backToMain">← Back to Main</button>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="admin-section">
+                <h2>🎭 AI Personality Configuration</h2>
+                <div class="form-group">
+                    <label>AI Name:</label>
+                    <input type="text" id="aiName" placeholder="Enter AI name">
+                </div>
+                <div class="form-group">
+                    <label>Personality Type:</label>
+                    <select id="personalityType">
+                        <option value="helpful">Helpful & Professional</option>
+                        <option value="creative">Creative & Innovative</option>
+                        <option value="technical">Technical & Precise</option>
+                        <option value="friendly">Friendly & Casual</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Custom Personality Description:</label>
+                    <textarea id="customPersonality" rows="4" placeholder="Describe the AI's personality..."></textarea>
+                </div>
+                <button id="savePersonality" class="btn-primary">Save Personality</button>
+            </div>
+
+            <div class="admin-section">
+                <h2>📜 AI Rules & Capabilities</h2>
+                <div class="rules-list" id="rulesList"></div>
+                <div class="add-rule">
+                    <input type="text" id="newRule" placeholder="Add new rule or capability">
+                    <button id="addRuleBtn">Add Rule</button>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>🔧 AI Capabilities</h2>
+                <div class="capabilities">
+                    <label><input type="checkbox" id="capWebCreation" checked> Web Creation</label>
+                    <label><input type="checkbox" id="capAICreation" checked> AI Creation</label>
+                    <label><input type="checkbox" id="capCodeGen" checked> Code Generation</label>
+                    <label><input type="checkbox" id="capDataAnalysis" checked> Data Analysis</label>
+                    <label><input type="checkbox" id="capImageGen" checked> Image Generation</label>
+                    <label><input type="checkbox" id="capAPIIntegration" checked> API Integration</label>
+                </div>
+                <button id="saveCapabilities" class="btn-primary">Save Capabilities</button>
+            </div>
+
+            <div class="admin-section">
+                <h2>🚫 Restrictions</h2>
+                <div class="form-group">
+                    <label><input type="checkbox" id="restrictHarmful"> Block Harmful Content</label>
+                    <label><input type="checkbox" id="restrictPersonal"> Block Personal Data Collection</label>
+                    <label><input type="checkbox" id="restrictMalicious"> Block Malicious Code</label>
+                    <label><input type="checkbox" id="requireApproval"> Require Admin Approval for Actions</label>
+                </div>
+                <button id="saveRestrictions" class="btn-primary">Save Restrictions</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
